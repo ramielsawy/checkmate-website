@@ -37,6 +37,8 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="./picture.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="./logo-light.webp" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
     <link rel="icon" type="image/webp" href="./icon.webp" />
@@ -106,12 +108,12 @@
         animation-delay: 0.4s;
       }
 
-      .brand .logo img {
+      .brand picture.logo img {
         width: min(260px, 40%);
         height: auto;
       }
 
-      .brand .slogan img {
+      .brand picture.slogan img {
         width: min(320px, 80%);
         height: auto;
         filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
@@ -173,8 +175,8 @@
           padding: 1.25rem;
         }
 
-        .brand .logo img,
-        .brand .slogan img {
+        .brand picture.logo img,
+        .brand picture.slogan img {
           width: 80%;
         }
       }
@@ -185,7 +187,14 @@
       <div class="brand brand-logo">
         <picture class="logo">
           <source srcset="./logo-light.webp" type="image/webp" />
-          <img src="./logo-light.png" alt="Checkmate Consultants" />
+          <img
+            src="./logo-light.png"
+            alt="Checkmate Consultants"
+            width="521"
+            height="319"
+            decoding="async"
+            fetchpriority="high"
+          />
         </picture>
       </div>
 
@@ -213,7 +222,14 @@
       <div class="brand brand-slogan">
         <picture class="slogan">
           <source srcset="./slogan.webp" type="image/webp" />
-          <img src="./slogan.png" alt="Luxury Audited by Algorithm" />
+          <img
+            src="./slogan.png"
+            alt="Luxury Audited by Algorithm"
+            width="320"
+            height="85"
+            decoding="async"
+            loading="lazy"
+          />
         </picture>
       </div>
     </main>
