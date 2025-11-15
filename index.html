@@ -208,11 +208,19 @@
       <div class="brand brand-logo">
         <picture class="logo">
           <source
-            srcset="./logo-light-260.webp 1x, ./logo-light.webp 2x"
+            srcset="
+              ./logo-light-260.webp 260w,
+              ./logo-light-360.webp 360w,
+              ./logo-light.webp 521w
+            "
             type="image/webp"
           />
           <source
-            srcset="./logo-light-260.png 1x, ./logo-light.png 2x"
+            srcset="
+              ./logo-light-260.png 260w,
+              ./logo-light-360.png 360w,
+              ./logo-light.png 521w
+            "
             type="image/png"
           />
           <img
@@ -222,6 +230,7 @@
             height="159"
             decoding="async"
             fetchpriority="high"
+            sizes="(max-width: 700px) 45vw, 260px"
           />
         </picture>
       </div>
