@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkmate Consultants | Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --chestnut-brown: #865535;
+        --amber-gold: #c48d49;
+        --olive-noir: #3d3f24;
+        --ivory-sand: #fbebc9;
+        --body-bg: #070704;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: url("./picture.png") center / cover no-repeat fixed;
+        background-image: image-set(
+          url("./picture.webp") type("image/webp"),
+          url("./picture.png") type("image/png")
+        );
+        color: var(--ivory-sand);
+        font-family: "Lora", "Parliament", serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1.5rem, 4vw, 4rem);
+      }
+
+      .page,
+      .page * {
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      .page {
+        width: 100%;
+        max-width: 1100px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        animation: fadeUp 0.9s ease forwards;
+        animation-delay: 0.1s;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .message {
+        max-width: 640px;
+        margin: 0 auto;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.4s;
+      }
+
+      .brand .logo img {
+        width: min(260px, 40%);
+        height: auto;
+      }
+
+      .brand .slogan img {
+        width: min(320px, 80%);
+        height: auto;
+        filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+      }
+
+      h1 {
+        font-family: "Parliament", "Lora", serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ivory-sand);
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        color: rgba(251, 235, 201, 0.92);
+        line-height: 1.75;
+        font-size: 1rem;
+      }
+
+      .email-link {
+        font-weight: 600;
+        color: var(--amber-gold);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .email-link:hover {
+        border-color: var(--amber-gold);
+      }
+
+      .brand-logo {
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+
+      .brand-slogan {
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 1.25rem;
+        }
+
+        .brand .logo img,
+        .brand .slogan img {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="brand brand-logo">
+        <picture class="logo">
+          <source srcset="./logo-light.webp" type="image/webp" />
+          <img src="./logo-light.png" alt="Checkmate Consultants" />
+        </picture>
+      </div>
+
+      <div class="message">
+        <h1>Our Commitment</h1>
+        <p>
+          At Checkmate Consultants, we don't just audit—we safeguard trust, reinforce integrity,
+          and strengthen systems to unlock elevated guest experiences. Whether you operate a
+          Michelin-star restaurant, a world-class bar, a luxury hotel, or a premium spa, we ensure
+          your brand performs with peak precision and uncompromising integrity.
+        </p>
+        <br />
+        <p>
+          Every recommendation, insight, and action is carefully calculated, like a masterful move
+          on a chessboard, to protect your revenue and reputation, uphold ethical standards, and
+          deliver exceptional, consistent experiences for your guests.
+        </p>
+        <br />
+        <p>
+          Drop us an email at
+          <a class="email-link" href="mailto:info@thecheckmate.ai">info@thecheckmate.ai</a>
+          to know more.
+        </p>
+      </div>
+      <div class="brand brand-slogan">
+        <picture class="slogan">
+          <source srcset="./slogan.webp" type="image/webp" />
+          <img src="./slogan.png" alt="Luxury Audited by Algorithm" />
+        </picture>
+      </div>
+    </main>
+  </body>
+</html>
+
