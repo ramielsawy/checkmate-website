@@ -228,6 +228,8 @@ body {
   overflow: hidden;
   background: var(--cm-bg) center / cover no-repeat;
   background-image: url('assets/hero.webp');
+  /* Position so the person's head (and left eye) is visible – shifted left to avoid cropping */
+  background-position: 58% 35%;
 }
 
 .company-hero::before {
@@ -293,7 +295,7 @@ body {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--cm-text-muted);
   max-width: 42ch;
-  margin-inline: auto 2rem;
+  margin-inline: auto;
   margin-bottom: 2rem;
 }
 
@@ -326,6 +328,11 @@ body {
 @media (max-width: 900px) {
   .company-problem .company-container {
     grid-template-columns: 1fr;
+  }
+
+  /* Image first on mobile */
+  .company-problem__visual {
+    order: -1;
   }
 }
 
@@ -510,6 +517,14 @@ body {
   .company-differentiator .company-container {
     grid-template-columns: 1fr;
   }
+
+  /* Image first on mobile */
+  .company-differentiator__visual {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    justify-self: center;
+  }
 }
 
 .company-differentiator__visual {
@@ -680,6 +695,97 @@ body {
 
   .company-footer__contact {
     justify-content: center;
+  }
+}
+
+/* ----- Mobile consistency (small phones) ----- */
+@media (max-width: 600px) {
+  .company-section {
+    padding-block: clamp(3rem, 8vw, 4rem);
+    padding-inline: 1.25rem;
+  }
+
+  .company-hero.company-section {
+    padding-inline: 1.25rem;
+  }
+
+  /* Keep person's head visible on mobile – shifted left so left eye isn't cropped */
+  .company-hero {
+    background-position: 58% 30%;
+  }
+
+  .company-hero__logo img {
+    max-width: 160px;
+  }
+
+  .company-hero__slogan {
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+  }
+
+  .company-hero__ctas {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .company-hero__ctas .company-cta,
+  .company-hero__ctas .company-link {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .company-hero__ctas .company-cta {
+    display: flex;
+  }
+
+  .company-hero__ctas .company-link {
+    display: inline-flex;
+  }
+
+  .company-page h2 {
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
+  }
+
+  .company-service-card {
+    padding: 1.25rem;
+  }
+
+  .company-problem__visual,
+  .company-about__image {
+    border-radius: var(--radius-md);
+  }
+
+  .company-final-cta .company-cta--large {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .company-services__cta .company-cta {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+    justify-content: center;
+  }
+
+  .company-problem .company-cta,
+  .company-differentiator .company-cta {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .company-faq dt {
+    font-size: var(--font-size-md);
+  }
+
+  .company-faq__item {
+    padding: 1rem 0;
   }
 }
 
